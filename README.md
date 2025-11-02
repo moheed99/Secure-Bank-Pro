@@ -258,11 +258,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
 
 ## 🙏 Acknowledgments
 
@@ -271,11 +267,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Bcrypt for secure password hashing
 - The cybersecurity community for best practices
 
-## 📧 Contact
 
-For questions or feedback, please reach out:
-- Email: your.email@example.com
-- Issues: [GitHub Issues](https://github.com/yourusername/secure-fintech-app/issues)
 
 ---
 
