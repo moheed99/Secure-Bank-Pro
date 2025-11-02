@@ -361,9 +361,11 @@ def show_dashboard():
         )
         
         st.markdown("---")
-       if st.button("🚪 Logout"):
-    import time
-    username = st.session_state.username
+        
+        if st.button("🚪 Logout"):              # ← 8 spaces
+            import time                         # ← 12 spaces
+            username = st.session_state.username # ← 12 spaces
+          
     log_activity(username, "Logout", "User logged out")
     
     st.session_state.logged_in = False
