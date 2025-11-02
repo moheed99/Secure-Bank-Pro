@@ -361,12 +361,18 @@ def show_dashboard():
         )
         
         st.markdown("---")
-        if st.button("🚪 Logout"):
-            log_activity(st.session_state.username, "Logout", "User logged out")
-            st.session_state.logged_in = False
-            st.session_state.username = None
-            st.session_state.session_token = None
-            st.rerun()
+       if st.button("🚪 Logout"):
+    import time
+    username = st.session_state.username
+    log_activity(username, "Logout", "User logged out")
+    
+    st.session_state.logged_in = False
+    st.session_state.username = None
+    st.session_state.session_token = None
+    
+    st.success("✅ Logout successful! Redirecting to login page...")
+    time.sleep(1)
+    st.rerun()
     
     # Main content
     users = load_users()
