@@ -349,6 +349,7 @@ def show_login_page():
 # Dashboard UI
 def show_dashboard():
     # Sidebar
+   # Sidebar
     with st.sidebar:
         st.markdown("### 👤 User Profile")
         st.markdown(f"**{st.session_state.username}**")
@@ -361,20 +362,25 @@ def show_dashboard():
         )
         
         st.markdown("---")
-        
-        if st.button("🚪 Logout"):              # ← 8 spaces
-            import time                         # ← 12 spaces
-            username = st.session_state.username # ← 12 spaces
-          
-    log_activity(username, "Logout", "User logged out")
-    
-    st.session_state.logged_in = False
-    st.session_state.username = None
-    st.session_state.session_token = None
-    
-    st.success("✅ Logout successful! Redirecting to login page...")
-    time.sleep(1)
-    st.rerun()
+        if st.button("🚪 Logout"):
+            import time
+            
+            # Safely get username before clearing
+            username = st.session_state.get('username', 'Guest')
+            
+            # Log activity if valid username
+            if username and username != 'Guest':
+                log_activity(username, "Logout", "User logged out")
+            
+            # Clear session
+            st.session_state.logged_in = False
+            st.session_state.username = None
+            st.session_state.session_token = None
+            
+            # Show message and redirect
+            st.success("✅ Logout successful! Redirecting to login page...")
+            time.sleep(1)
+            st.rerun()
     
     # Main content
     users = load_users()
